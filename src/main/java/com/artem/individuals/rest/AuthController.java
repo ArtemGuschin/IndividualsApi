@@ -27,7 +27,7 @@ public class AuthController {
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<TokenResponse> register(@Valid @RequestBody RegistrationRequest request) {
         if (!request.getPassword().equals(request.getConfirmPassword())) {
-            return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST, "Password confirmation does not match"));
+            return Mono.error(new ResponseStatusException(HttpStatus.BAD_REQUEST, "Password confirmation does not match!!!"));
         }
 
         return keycloakService.userExists(request.getEmail())

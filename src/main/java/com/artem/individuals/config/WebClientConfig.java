@@ -12,16 +12,29 @@ import java.time.Duration;
 
 @Configuration
 public class WebClientConfig {
-
     @Bean
     public WebClient webClient() {
-        HttpClient httpClient = HttpClient.create()
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
-                .responseTimeout(Duration.ofSeconds(5));
-
         return WebClient.builder()
-                .clientConnector(new ReactorClientHttpConnector(httpClient))
+                .baseUrl("http://localhost:9090")
                 .build();
     }
+
+
+
+
+
+
+
+
+//    @Bean
+//    public WebClient webClient() {
+//        HttpClient httpClient = HttpClient.create()
+//                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000)
+//                .responseTimeout(Duration.ofSeconds(5));
+//
+//        return WebClient.builder()
+//                .clientConnector(new ReactorClientHttpConnector(httpClient))
+//                .build();
+//    }
 }
 

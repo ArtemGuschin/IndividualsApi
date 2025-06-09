@@ -55,6 +55,8 @@ public class KeycloakService {
             user.setEnabled(true);
             user.setUsername(email);
             user.setEmail(email);
+            user.setFirstName("TEST_FN");
+            user.setLastName("TEST_LN");
             user.setEmailVerified(true);
 
             CredentialRepresentation credential = new CredentialRepresentation();
